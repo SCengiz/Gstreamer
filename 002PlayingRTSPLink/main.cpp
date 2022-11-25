@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
 
     g_object_set(data.rtspsrc, "location", "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4", NULL);
 /*
-            | RTSPSRC ¦ -> | DECODEBIN | **** CALLBACK **** | CONVERT | -> | SINK |
+            | RTSPSRC ¦ **** CALLBACK **** | DECODEBIN | **** CALLBACK **** | CONVERT | -> | SINK |
 Here we use a callback for linking the some elements.
 */
     if(!gst_element_link(data.autovideoconvert, data.autovideosink)) {
